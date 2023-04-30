@@ -1,0 +1,10 @@
+[package]
+name = "facetrack"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+kiss3d = "0.30"
+nalgebra = "0.29"
+opencv = "0.80"
+rand = "0.8.5"
