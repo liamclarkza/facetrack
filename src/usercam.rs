@@ -18,9 +18,7 @@ pub struct UserPerspectiveView {
 }
 
 impl UserPerspectiveView {
-    pub fn new() -> Self {
-        let w = 35.0;
-        let h = 22.0;
+    pub fn new(w: f32, h: f32) -> Self {
         Self {
             pa: Vector3::new(-w / 2.0, -h / 2.0, 0.0),
             pb: Vector3::new(w / 2.0, -h / 2.0, 0.0),
@@ -151,13 +149,10 @@ impl UserPerspectiveView {
 
 impl Camera for UserPerspectiveView {
     fn handle_event(&mut self, _: &Canvas, event: &WindowEvent) {
-        //TODO: handle other events in the match statement
-        match *event {
-            WindowEvent::FramebufferSize(_, _) => {
-                // TODO: Update to account for window width and height
-                self.update_projviews();
-            }
-            _ => {}
+        //TODO: handle other events if you want
+        if let WindowEvent::FramebufferSize(_, _) = *event {
+            // TODO: Update to account for window width and height
+            self.update_projviews();
         }
     }
 

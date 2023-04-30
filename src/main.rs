@@ -46,7 +46,8 @@ fn main() -> Result<()> {
     window.set_light(Light::Absolute(Point3::new(50.0, 50.0, 90.0)));
 
     // Set up the user perspective camera.
-    let mut cam = UserPerspectiveView::new();
+    // Width and Height are in cm, screen centre is at 0,0,0
+    let mut cam = UserPerspectiveView::new(35.0, 22.0);
 
     // Main render loop.
     let mut pe = Vector3::new(0.0, 0.0, 40.0);

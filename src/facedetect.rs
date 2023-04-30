@@ -1,5 +1,6 @@
 use opencv::{core, highgui, imgproc, objdetect, prelude::*, types, videoio, Result};
 
+#[allow(dead_code)]
 pub fn run() -> Result<()> {
     let mut camera = videoio::VideoCapture::new(0, videoio::CAP_ANY)?;
     let xml = "/Users/liam/Desktop/facetrack/src/haarcascade_frontalface_default.xml";
